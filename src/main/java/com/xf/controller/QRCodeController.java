@@ -21,7 +21,7 @@ public class QRCodeController{
 	@RequestMapping(value = "/getqrcode")
 	protected void service(HttpServletRequest requset, HttpServletResponse response)
 			throws ServletException, IOException {
-		String content = "姓名:maysnow 电话:123687495";
+		String content = "姓名:maysnow,电话:123687495";
 		EncoderHandler encoder = new EncoderHandler();
 		encoder.encoderQRCoder(content, response);
 	}
