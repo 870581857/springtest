@@ -19,7 +19,7 @@
     updated_time
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from user_account
     where id = #{id,jdbcType=INTEGER}
@@ -161,4 +161,10 @@
       updated_time = #{updatedTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByUserId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select <include refid="Base_Column_List" />
+    from user_account
+    where user_id=#{userId}
+  </select>
 </mapper>

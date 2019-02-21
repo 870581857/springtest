@@ -5,6 +5,7 @@ import com.xf.service.DataLinkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created by DCJS
@@ -17,10 +18,11 @@ public class DateLinkTestController {
     DataLinkService dataLinkService;
 
     @RequestMapping("datalink")
-    public String LinkTest() {
+    @ResponseBody
+    public UserAccount LinkTest() {
         UserAccount useraccount = dataLinkService.selectUserAccount(383180);
         useraccount.getPhone();
-        return "success";
+        return useraccount;
     }
 
 }

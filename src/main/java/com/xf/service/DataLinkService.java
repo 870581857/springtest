@@ -15,7 +15,7 @@ public class DataLinkService {
     UserAccountMapper userAccountMapper;
 
     public UserAccount selectUserAccount(Integer userId){
-        UserAccount userAccount = userAccountMapper.selectByPrimaryKey(userId);
+        UserAccount userAccount = userAccountMapper.selectByUserId(userId);
         return userAccount;
     }
 }
