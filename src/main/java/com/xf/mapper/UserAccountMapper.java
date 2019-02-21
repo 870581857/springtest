@@ -1,4 +1,4 @@
-package com.xf.idao;
+package com.xf.mapper;
 
 import com.xf.domain.UserAccount;
 

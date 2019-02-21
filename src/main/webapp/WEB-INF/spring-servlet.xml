@@ -5,8 +5,10 @@
        xmlns:contextL="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <!-- 启用spring mvc 注解 -->
+    <context:annotation-config />
     <!-- 设置使用注解的类所在的jar包 -->
-    <context:component-scan base-package="com.xf.*" />
+    <context:component-scan base-package="com.xf.controller" />
 
     <!-- 完成请求和注解POJO的映射 -->
     <!--<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"></bean>-->

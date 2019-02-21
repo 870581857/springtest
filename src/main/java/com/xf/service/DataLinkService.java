@@ -1,7 +1,7 @@
 package com.xf.service;
 
 import com.xf.domain.UserAccount;
-import com.xf.idao.UserAccountMapper;
+import com.xf.mapper.UserAccountMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
