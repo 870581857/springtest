@@ -22,18 +22,14 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-    <!-- log4j配置，文件路径，因为是跟随项目启动 -->
-    <context-param>　　　　　
-        <param-name>webAppRootKey</param-name>
-        <param-value>weChat.root</param-value>
-    </context-param>
-    　　　　
-    <context-param>
-        <param-name>log4jConfigLocation</param-name>
-        <param-value>/WEB-INF/log4j.properties</param-value><!--指定日志配置文件的所在位置-->
+    <!-- log4j配置 -->  
+    <context-param>    
+        <param-name>log4jConfigLocation</param-name>    
+        <param-value>classpath:log4j.properties</param-value>    
     </context-param>
 
-    <listener>
-        <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+    <!-- log4j监听器 -->  
+    <listener>    
+        <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>    
     </listener>
 </web-app>
