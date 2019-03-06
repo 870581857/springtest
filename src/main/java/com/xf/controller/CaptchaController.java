@@ -1,8 +1,7 @@
 package com.xf.controller;
 
 import com.xf.common.CaptchaUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.xf.common.EncoderHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,8 +16,8 @@ import java.awt.image.BufferedImage;
 @RequestMapping("/captcha")
 public class CaptchaController {
 
-	private Logger logger = LoggerFactory.getLogger(CaptchaController.class);
-
+//	private Logger logger = LoggerFactory.getLogger(CaptchaController.class);
+org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(EncoderHandler.class);
 	/**
 	 * 生成验证码
 	 * @param request

@@ -1,8 +1,6 @@
 package com.xf.common;
 
 import com.swetake.util.Qrcode;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletResponse;
@@ -10,7 +8,8 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class EncoderHandler {
-	Logger logger = LoggerFactory.getLogger(EncoderHandler.class);
+//	Logger logger = LoggerFactory.getLogger(EncoderHandler.class);
+	org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(EncoderHandler.class);
 
     public void encoderQRCoder(String content, HttpServletResponse response) {
 		logger.info("EncoderHandler ##  二维码获取");
