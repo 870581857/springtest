@@ -78,7 +78,11 @@ public class MQQueue {
                 }
             }
         });
+
+        //*** messageListener 监听器是异步的 可能还没有接收到消息程序就退出了 所以延时
+        //Thread.sleep(5000);
         System.in.read();
+
         consumer.close();
         session.close();
         connection.close();

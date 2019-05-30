@@ -12,7 +12,7 @@ public class Consumer {
     public static void main(String[] args) throws Exception {
         //创建一个mq的连接工厂
         ConnectionFactory factory
-                = new ActiveMQConnectionFactory("tcp://192.168.1.102:61616");
+                = new ActiveMQConnectionFactory("tcp://192.168.76.128:61616");
         //获得一个连接
         Connection connection = factory.createConnection();
         //持久订阅的时候需要一个id来标识
