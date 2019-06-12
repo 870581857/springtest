@@ -2,6 +2,10 @@ package com.xf.activemq.mq3;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.jms.*;
 
@@ -10,29 +14,16 @@ import javax.jms.*;
  * 2019/5/29.
  * https://blog.csdn.net/qq_33404395/article/details/80590113
  */
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations={"classpath*:spring-application.xml"})
 public class MQQueue {
-    public static void main(String[] args) {
-
-        MQQueue mqQueue = new MQQueue();
-
-        try {
-            mqQueue.testMQProducerQueue();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-//        try {
-//            mqQueue.testMQConsumerQueue();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-
-    }
+    @Value("${vm.ip}")
+    private String vmip;
 
     @Test
     public void testMQProducerQueue() throws Exception{
         //创建工厂连接对象,需要定制ip和端口
-        ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://192.168.76.128:61616");
+        ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://" + vmip);
         //使用连接工厂创建一个连接对象
         Connection connection = connectionFactory.createConnection();
         //开启连接
@@ -55,7 +46,7 @@ public class MQQueue {
     @Test
     public void testMQConsumerQueue() throws Exception{
         //创建工厂连接对象
-        ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://192.168.76.128:61616");
+        ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://" + vmip);
         Connection connection = connectionFactory.createConnection();
         connection.start();
         Session session = connection.createSession(false,Session.AUTO_ACKNOWLEDGE);
