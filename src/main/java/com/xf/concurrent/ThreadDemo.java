@@ -4,14 +4,14 @@ package com.xf.concurrent;
  * Created by DCJS
  * 2019/6/12.
  */
-public class Concurrent implements Runnable {
+public class ThreadDemo implements Runnable {
     protected int countDown = 10;
     private static int count = 0;
     private int id = count++;
 
     public static void main(String[] args) {
         for(int i=0;i<10;i++){
-            Thread t = new Thread(new Concurrent());
+            Thread t = new Thread(new ThreadDemo());
             t.start();
         }
     }
@@ -22,4 +22,7 @@ public class Concurrent implements Runnable {
         }
     }
 
+    public int getId() {
+        return id;
+    }
 }
