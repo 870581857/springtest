@@ -7,13 +7,12 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 线程休眠
  * Created by DCJS
  * 2019/6/20.
  */
 public class SleepingTask extends ThreadDemo {
     public void run() {
-
-
         try {
             while (countDown-- > 0) {
                 System.out.println(Thread.currentThread() + "->" +getId() + "->" + countDown + "->" + Thread.currentThread().getPriority());
