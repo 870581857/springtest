@@ -1,4 +1,4 @@
-package com.zzqf.spider;
+package com.xf.http;
 
 import org.apache.commons.httpclient.ConnectTimeoutException;
 import org.apache.commons.httpclient.NoHttpResponseException;
