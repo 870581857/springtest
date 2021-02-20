@@ -58,4 +58,22 @@
     <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
 
     <aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
+
+    <bean id="kafkaConsumerDemo" class="com.xf.service.canal.KafkaConsumerDemo">
+        <property name="props">
+            <props>
+                <prop key="topic">admin-claim-order</prop>
+                <prop key="bootstrap.servers">192.168.213.130:9092</prop>
+                <prop key="group.id">group1</prop>
+                <prop key="enable.auto.commit">true</prop>
+                <prop key="auto.commit.interval.ms">1000</prop>
+                <prop key="session.timeout.ms">30000</prop>
+                <prop key="key.deserializer">org.apache.kafka.common.serialization.StringDeserializer
+                </prop>
+                <prop key="value.deserializer">org.apache.kafka.common.serialization.StringDeserializer
+                </prop>
+            </props>
+
+        </property>
+    </bean>
 </beans>
