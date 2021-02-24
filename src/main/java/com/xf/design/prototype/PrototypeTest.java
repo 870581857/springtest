@@ -1,5 +1,7 @@
 package com.xf.design.prototype;
 
+import com.alibaba.fastjson.JSON;
+
 //具体原型类
 class Realizetype implements Cloneable {
     Realizetype() {
@@ -18,5 +20,6 @@ public class PrototypeTest {
         Realizetype obj1 = new Realizetype();
         Realizetype obj2 = (Realizetype) obj1.clone();
         System.out.println("obj1==obj2?" + (obj1 == obj2));
+        JSON.parseObject("");
     }
 }
