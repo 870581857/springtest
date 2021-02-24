@@ -1,5 +1,8 @@
 package com.xf.design.prototype;
 
+/**
+ * 原型模式
+ */
 public class ProtoTypeCitation {
     public static void main(String[] args) throws CloneNotSupportedException {
         citation obj1 = new citation("张三", "同学：在2016学年第一学期中表现优秀，被评为三好学生。", "韶关学院");
